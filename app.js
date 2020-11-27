@@ -1,7 +1,7 @@
 const parser = require('./parseBigram')
 const FileReader = require('./inputReader')
 const writer = require('./outputWriter')
-const readLine = require('readLine')
+const readline = require('readline')
 // https://node.readthedocs.io/en/latest/api/readline/
 
 // build the CLI
@@ -13,11 +13,12 @@ const rl = readline.createInterface({
 
 console.log(`
   GoHealth Bigram Problem!
+  Let's do this!
 `);
 
-rl.question('Please type the input file name: ', fileName => {
+rl.question(`Please type the input file name and hit 'enter': `, fileName => {
   if (fileName) {
-    const filePath = `./textFiles/${fileName}`
+    const filePath = `./inputFiles/${fileName}`
     let reader = new FileReader(filePath)
     reader.read(() => {
       const bigrams = parser.parseBigrams(reader.data)
