@@ -4,7 +4,7 @@
   "description": "GoHealth Bigrams Problem",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/jacobbisaacson/bigrams/issues"
   },
-  "homepage": "https://github.com/jacobbisaacson/bigrams#readme"
+  "homepage": "https://github.com/jacobbisaacson/bigrams#readme",
+  "dependencies": {
+    "mocha": "^8.2.1"
+  }
 }
