@@ -14,7 +14,7 @@ const parse = (str) => {
 // NO apostrophes or can't, don't, etc.
 // str.match(/\b(\w+)\b/g)
 
-const createHistrogram = (word_list) => {
+const createHistrogram = (wordList) => {
   const bigramHistogram = {}
   if (wordList.length === 1) {
     return bigrams
@@ -29,8 +29,17 @@ const createHistrogram = (word_list) => {
       bigramHistogram[bigram] = + 1
     }
   }
-  console.log(wordList)
+  // console.log(wordList)
   return bigramHistogram
 }
 
-module.exports = parse
+let stringList = parse("This., -/ #! an $ % ^ & * example ;: {} of a = -_ string with `~)() punctuation  and-spaces ")
+console.log(createHistrogram(stringList));
+stringList = parse(`Testing's, doing things in here, when there's time.`)
+console.log(createHistrogram(stringList));
+stringList = parse(`Example of the this thing and the this other guy.`)
+console.log(createHistrogram(stringList));
+
+
+// export { parse, createHistrogram };
+module.exports = { parse, createHistrogram }

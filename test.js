@@ -1,3 +1,4 @@
+import { parse, createHistrogram } from 'parser.js'
 const assert = require('assert')
 const parser = require('./parser.js')
 // set of assertion functions for testing
