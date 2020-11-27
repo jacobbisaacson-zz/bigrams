@@ -1,0 +1,24 @@
+{
+  "name": "bigrams",
+  "version": "1.0.0",
+  "description": "GoHealth Bigrams Problem",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobbisaacson/bigrams.git"
+  },
+  "keywords": [
+    "bigrams",
+    "histrogram",
+    "parsing"
+  ],
+  "author": "Jacob Isaacson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobbisaacson/bigrams/issues"
+  },
+  "homepage": "https://github.com/jacobbisaacson/bigrams#readme"
+}
