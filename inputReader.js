@@ -33,7 +33,7 @@ class FileReader {
     }))
     .on('end', function() {
       callback(this.data)
-      console.log("Done -- file has been read");
+      console.log("Done! -- Please see output above");
     })
   }
 }

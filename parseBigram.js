@@ -21,7 +21,7 @@ const parseBigrams = (str) => {
   return bigrams
 }
 
-const check_bigram = (bigram) => {
+const checkBigram = (bigram) => {
   if (bigram.split(' ').length > 2)
     return false
   return (/\b[\w]+ [\w]+\b/).test(bigram)
@@ -31,7 +31,7 @@ const createHistogram = (bigrams) => {
   const bigramHistogram = {}
   for(let i = 0; i < bigrams.length; i++) {
     let bigram = bigrams[i]
-    if (check_bigram(bigram)) {
+    if (checkBigram(bigram)) {
       if (bigramHistogram[bigram]) {
         bigramHistogram[bigram] = + bigramHistogram[bigram] + 1
       } else {

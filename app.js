@@ -24,6 +24,7 @@ rl.question(`Please type the input file name and hit 'enter': `, fileName => {
       const bigrams = parser.parseBigrams(reader.data)
       const histogram = parser.createHistogram(bigrams)
       writer.write(histogram)
+      console.log(`Histogram of Bigram Instances in ${fileName} File`, histogram);
     })
   } else {
     console.log('Sorry, cannot read the file. Please try again.');

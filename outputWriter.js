@@ -6,7 +6,7 @@ const write = (object) => {
       console.error(err);
       return;
     }
-    console.log("Check output.txt for the Bigram Histrogram");
+    console.log("You can view the output file in '/output' in your text editor");
   });
 };
 
