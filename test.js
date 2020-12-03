@@ -1,13 +1,16 @@
 // import { parse, createHistrogram } from 'parser.js'
 const parser = require("./parseBigram");
 const chai = require("chai");
+
+// ---------------------------------------------------------------- //
+
 // const assert = require('assert')
 
 // it("RETURNS TRUE", () => {
 //   assert.equal(true, true);
 // });
 
-// set of assertion functions for testing
+// set of functions for testing
 
 // https://nodejs.org/api/assert.html#assert_assert_equal_actual_expected_message
 // super basic test to make sure it works
@@ -17,6 +20,8 @@ const chai = require("chai");
 //     `Testing's`, 'doing', 'things', 'in', 'here', 'in', 'time'
 //   ])
 // })
+
+// ---------------------------------------------------------------- //
 
 it("Will NOT parse bigrams from an empty string", () => {
   chai.expect(parser.parseBigrams("")).to.have.members([]);

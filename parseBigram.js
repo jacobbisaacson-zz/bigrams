@@ -1,11 +1,11 @@
 // NO apostrophes or can't, don't, etc.
 // str.match(/\b(\w+)\b/g)
 
-  // https://eloquentjavascript.net/09_regexp.html
-  // \W -- nonalphanumeric character
-  // g -- globally
-  // ^ -- to match
-  // all words in the string, NOT non-alpha characters
+// https://eloquentjavascript.net/09_regexp.html
+// \W -- nonalphanumeric character
+// g -- globally
+// ^ -- to match
+// all words in the string, NOT non-alpha characters
 
 
 const parseBigrams = (str) => {
@@ -29,7 +29,7 @@ const checkBigram = (bigram) => {
 
 const createHistogram = (bigrams) => {
   const bigramHistogram = {}
-  for(let i = 0; i < bigrams.length; i++) {
+  for (let i = 0; i < bigrams.length; i++) {
     let bigram = bigrams[i]
     if (checkBigram(bigram)) {
       if (bigramHistogram[bigram]) {

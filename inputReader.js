@@ -1,4 +1,3 @@
-// 'user strict'
 // https://nodejs.org/api/fs.html#fs_class_fs_readstream
 const fs = require('fs')
 // https://www.npmjs.com/package/event-stream
@@ -16,25 +15,25 @@ class FileReader {
   }
 
   // https://www.npmjs.com/package/event-stream
-    // fs.createReadStream(filename)
-    // .pipe(es.split()) //defaults to lines.
-    // .pipe(es.parse())
-    // the push the line to data array
+  // fs.createReadStream(filename)
+  // .pipe(es.split()) //defaults to lines.
+  // .pipe(es.parse())
+  // the push the line to data array
 
   // async / await?
 
   read(callback) {
-    this.reader.on('error', function(err) {
+    this.reader.on('error', function (err) {
       console.log("Error reading file", err);
     })
-    .pipe(es.split()).pipe(es.mapSync(line => {
-      ++this.lineNumber
-      this.data = this.data + `/${line}`
-    }))
-    .on('end', function() {
-      callback(this.data)
-      console.log("Done! -- Please see output above");
-    })
+      .pipe(es.split()).pipe(es.mapSync(line => {
+        ++this.lineNumber
+        this.data = this.data + `/${line}`
+      }))
+      .on('end', function () {
+        callback(this.data)
+        console.log("Done! -- Please see output above");
+      })
   }
 }
 
