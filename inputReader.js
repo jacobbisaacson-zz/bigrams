@@ -1,4 +1,4 @@
-'user strict'
+// 'user strict'
 // https://nodejs.org/api/fs.html#fs_class_fs_readstream
 const fs = require('fs')
 // https://www.npmjs.com/package/event-stream
@@ -21,7 +21,7 @@ class FileReader {
     // .pipe(es.parse())
     // the push the line to data array
 
-  // change to async / await?
+  // async / await?
 
   read(callback) {
     this.reader.on('error', function(err) {

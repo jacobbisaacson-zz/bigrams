@@ -1,15 +1,16 @@
 // import { parse, createHistrogram } from 'parser.js'
 const parser = require("./parseBigram");
 const chai = require("chai");
-const assert = require('assert')
+// const assert = require('assert')
+
+// it("RETURNS TRUE", () => {
+//   assert.equal(true, true);
+// });
 
 // set of assertion functions for testing
 
 // https://nodejs.org/api/assert.html#assert_assert_equal_actual_expected_message
 // super basic test to make sure it works
-it("RETURNS TRUE", () => {
-  assert.equal(true, true);
-});
 
 // it('SEPARATES WORDS AFTER SPACES AND PUNCTUATION', () => {
 //   assert.equal(parser.parse(`Testing's doing things in here, in time.`), [
@@ -25,10 +26,10 @@ it("Will NOT parse bigrams from a single-word-string", () => {
   chai.expect(parser.parseBigrams("Word")).to.have.members([]);
 });
 
-it("Works correctly with proper lower/upper-case", () => {
+it("Works correctly with proper lower/upper-case characters", () => {
   chai
     .expect(
-      parser.parseBigrams("I love Bruna and she is a Cute doge.")
+      parser.parseBigrams("I love Bruna and she is a Cute Doge.")
     )
     .to.have.members([
       "i love",
@@ -42,11 +43,11 @@ it("Works correctly with proper lower/upper-case", () => {
     ]);
 });
 
-it("Works when input is a string WITH punctuation", () => {
+it("Works correctly with punctuation", () => {
   chai
     .expect(
       parser.parseBigrams(
-        "This., -/ is #! an $ % ^ & * example ;: {} of a = -_ string with `~)() punctuation."
+        "This.,.,.,,. -/ is #! an $ % ^ & * :;,. example ;: {} of a = -_ string with .,.,.,/// `~)() punctuation."
       )
     )
     .to.have.members([
@@ -60,6 +61,22 @@ it("Works when input is a string WITH punctuation", () => {
       "with punctuation",
     ]);
 });
+
+// to.eql --> to.equal
+// https://devhints.io/chai
+it("Will count the bigrams and correclty apply to the histogram", () => {
+  chai.expect(parser.createHistogram(["you got", "got a", "a friend", "friend in", "in me", "me you", "you got", "got a", "a friend", "friend in", "in me", "and some", "other things"]))
+    .to.eql({
+      "you got": 2,
+      "got a": 2,
+      "a friend": 2,
+      "friend in": 2,
+      "in me": 2,
+      "me you": 1,
+      "and some": 1,
+      "other things": 1
+    })
+})
 
 
 
