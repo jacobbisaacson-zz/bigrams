@@ -78,6 +78,19 @@ it("Will count the bigrams and correclty apply to the histogram", () => {
     })
 })
 
+it("Works correctly when there are NO multiples of bigrams", () => {
+  chai.expect(parser.createHistogram(["you got", "got a", "a friend", "friend in", "in me", "and some", "other things"]))
+    .to.eql({
+      "you got": 1,
+      "got a": 1,
+      "a friend": 1,
+      "friend in": 1,
+      "in me": 1,
+      "and some": 1,
+      "other things": 1
+    })
+})
+
 
 
 

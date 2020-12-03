@@ -6,5 +6,5 @@
 -- npm install
 -- node app
 -- Command will appear in terminal
--- npm test to run
+-- npm test
 ```

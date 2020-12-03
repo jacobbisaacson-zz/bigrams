@@ -1,3 +1,5 @@
+// converstion to ES6 causes import/export error (checked typos, can't F.I)
+
 const parser = require('./parseBigram')
 const FileReader = require('./inputReader')
 const writer = require('./outputWriter')
