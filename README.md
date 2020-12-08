@@ -4,7 +4,9 @@
 ```
 -- git clone
 -- npm install
--- node app
+-- node app.js
+    -- add file to /inputFiles
 -- Command will appear in terminal
--- npm test
+    -- file name example: "test_2.txt"
+-- npm test to run tests
 ```
